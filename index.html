@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Experto en ChatGPT | Domina la IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10a37f; /* Verde ChatGPT */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #f59e0b; /* Naranja para CTA */
+            --text-gray: #334155;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-gray);
+            line-height: 1.6;
+            overflow-x: hidden; /* Evita scroll horizontal residual */
+        }
+
+        /* --- Barra de Navegación --- */
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo-container img {
+            max-width: 100%; /* Ajuste para responsividad */
+            height: auto;
+            width: 300px; /* Reducido un poco para mejor balance */
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            /* Nota: Unsplash cambió su formato, si no carga la imagen usa: https://images.unsplash.com/photo-1677442136019-21780ecad995 */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .highlight { color: var(--primary); }
+
+        .subheadline {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, background 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(16, 163, 127, 0.4);
+            max-width: 100%; /* Evita que el botón se salga en pantallas mini */
+            box-sizing: border-box;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #0d8c6c;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Pain Points */
+        .pain-section {
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pain-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid #ef4444;
+        }
+
+        .pain-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+
+        /* --- Videos --- */
+        .video-section {
+            background-color: #f1f5f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-thumbnail {
+            background: #ddd;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Syllabus */
+        .syllabus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .module {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        /* Instructor */
+        .instructor-section {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .instructor-flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .qr-wrapper img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            border: 4px solid white;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .portfolio-link {
+            padding: 10px 20px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .subheadline { font-size: 1.1rem; }
+            
+            header { padding: 50px 15px; }
+
+            .navbar { 
+                flex-direction: column; 
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .logo-container img {
+                width: 220px; /* Logo más pequeño en móviles */
+                margin: 0 auto;
+            }
+
+            .nav-links { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                font-size: 0.85rem;
+            }
+
+            .instructor-flex-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .cta-button {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="logo.jpeg" alt="Logo Marca">
+    </div>
+    <div class="nav-links">
+        <a href="https://docs.google.com/document/d/e/2PACX-1vSTgaZbgGNWQkp04ivLC2OYqNZr9O9_2s1vCMo4ZcDxtGu6ILjHcrfuebJ9id__qdKEZClvUzPlaqYa/pub" target="_blank"><i class="fas fa-file-user"></i> Mi CV</a>
+        <a href="https://wa.me/message/JG7VSAITBDBVO1" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i> Contacto</a>
+    </div>
+</nav>
+
+<header>
+    <h1>No compitas <em>contra</em> la IA,<br>compite <span class="highlight">CON</span> la IA.</h1>
+    <p class="subheadline">Desbloquea un futuro de posibilidades ilimitadas. Conviértelo en el motor productivo de tu negocio.</p>
+    <a href="#registro" class="cta-button">QUIERO DOMINAR CHATGPT AHORA</a>
+</header>
+
+<div class="pain-section">
+    <div class="container">
+        <h2 style="color: var(--dark); font-size: 1.8rem;">¿Te sientes identificado?</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <span class="pain-icon">🛑</span>
+                <h3>Miedo a la Fuga de Datos</h3>
+                <p>"No subo contratos ni estados financieros por miedo."</p>
+            </div>
+            <div class="pain-card">
+                <span class="pain-icon">🤥</span>
+                <h3>Desconfianza</h3>
+                <p>"A veces inventa datos y no puedo confiar plenamente."</p>
+            </div>
+            <div class="pain-card">
+                <span class="pain-icon">🤯</span>
+                <h3>Caos Operativo</h3>
+                <p>"Pierdo tiempo explicando siempre lo mismo a la IA."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="video-section">
+    <div class="container">
+        <h2>Shorts y videos</h2>
+        <div class="video-grid">
+            <div class="video-thumbnail">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Video 1" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="video-thumbnail">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Video 2" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="video-thumbnail">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80" alt="Video 3" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="instructor-section">
+    <div class="container">
+        <div class="instructor-flex-container">
+            <div class="qr-wrapper">
+                <img src="qr.png" alt="QR Contacto">
+            </div>
+            <div class="instructor-info">
+                <h2>Tu Instructor: Pedro Medina</h2>
+                <p>Ingeniero en Sistemas con Maestrías en Negocios. Te enseñará a ahorrar horas de trabajo real.</p>
+                <a href="https://wa.me/message/JG7VSAITBDBVO1" style="color: #25D366; text-decoration: none; font-weight: bold;">
+                    <i class="fab fa-whatsapp"></i> Hablar con Pedro
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="final-cta" id="registro" style="text-align: center; padding: 60px 20px;">
+    <h2>El futuro pertenece a quienes dominan la IA hoy.</h2>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYuen_Rb1M5556Z8oSoSyXLbXAgB7Ohij6jSbpkmbxUJY7w/viewform" class="cta-button" style="background-color: var(--accent);">APARTAR MI LUGAR AHORA</a>
+</div>
+
+<footer style="background: #eee; text-align: center; padding: 20px; font-size: 0.8rem;">
+    <p>&copy; 2026 Curso Experto en ChatGPT. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
