@@ -20,7 +20,7 @@
             padding: 0;
             color: var(--text-gray);
             line-height: 1.6;
-            overflow-x: hidden; /* Evita scroll horizontal residual */
+            overflow-x: hidden; /* Evita desbordamiento lateral */
         }
 
         /* --- Barra de Navegación --- */
@@ -37,9 +37,9 @@
         }
 
         .logo-container img {
-            max-width: 100%; /* Ajuste para responsividad */
-            height: auto;
-            width: 300px; /* Reducido un poco para mejor balance */
+            height: auto; 
+            width: 100%;
+            max-width: 350px; /* Ajuste responsivo */
             display: block;
         }
 
@@ -68,11 +68,11 @@
             color: white;
             padding: 80px 20px;
             text-align: center;
-            /* Nota: Unsplash cambió su formato, si no carga la imagen usa: https://images.unsplash.com/photo-1677442136019-21780ecad995 */
             background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
         }
+
 
         h1 {
             font-size: 3rem;
@@ -80,7 +80,9 @@
             line-height: 1.2;
         }
 
+
         .highlight { color: var(--primary); }
+
 
         .subheadline {
             font-size: 1.5rem;
@@ -88,6 +90,7 @@
             margin: 0 auto 30px auto;
             opacity: 0.9;
         }
+
 
         .cta-button {
             background-color: var(--primary);
@@ -100,14 +103,16 @@
             transition: transform 0.2s, background 0.3s;
             display: inline-block;
             box-shadow: 0 4px 15px rgba(16, 163, 127, 0.4);
-            max-width: 100%; /* Evita que el botón se salga en pantallas mini */
+            max-width: 90%; /* Ajuste móvil */
             box-sizing: border-box;
         }
+
 
         .cta-button:hover {
             transform: scale(1.05);
             background-color: #0d8c6c;
         }
+
 
         /* Container */
         .container {
@@ -115,6 +120,7 @@
             margin: 0 auto;
             padding: 60px 20px;
         }
+
 
         /* Pain Points */
         .pain-section {
@@ -124,10 +130,11 @@
         
         .pain-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
+
 
         .pain-card {
             background: #fff;
@@ -137,14 +144,32 @@
             border-top: 5px solid #ef4444;
         }
 
+
         .pain-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
 
-        /* --- Videos --- */
+        /* --- Sección de Videos --- */
         .video-section {
             background-color: #f1f5f9;
             padding: 50px 20px;
             text-align: center;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
+
+        .video-header {
+            margin-bottom: 30px;
+        }
+
+        .channel-link {
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .channel-link:hover { text-decoration: underline; }
 
         .video-grid {
             display: grid;
@@ -161,7 +186,46 @@
             overflow: hidden;
             position: relative;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+
+
+        /* Benefits / Solution */
+        .solution-section {
+            background-color: var(--light);
+        }
+
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+
+        .check-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
 
         /* Syllabus */
         .syllabus-grid {
@@ -170,12 +234,17 @@
             gap: 20px;
         }
 
+
         .module {
             background: white;
             border: 1px solid #e2e8f0;
             padding: 25px;
             border-radius: 8px;
         }
+
+
+        .module h3 { color: var(--dark); margin-top: 0; }
+
 
         /* Instructor */
         .instructor-section {
@@ -198,14 +267,43 @@
             height: 150px;
             border-radius: 10px;
             border: 4px solid white;
+            background: white;
         }
 
-        /* Portfolio */
+        .wa-direct-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: #25D366;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border: 2px solid #25D366;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .wa-direct-link:hover {
+            background-color: #25D366;
+            color: white;
+        }
+
+
+        /* Portfolio Section */
+        .portfolio-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
         .portfolio-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            margin-top: 20px;
         }
 
         .portfolio-link {
@@ -215,45 +313,58 @@
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
+            transition: all 0.3s;
         }
 
-        /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            .subheadline { font-size: 1.1rem; }
-            
-            header { padding: 50px 15px; }
 
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .final-cta h2 { font-size: 2.5rem; color: var(--dark); }
+
+
+        /* --- AJUSTES PARA CELULAR (Media Queries) --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .subheadline { font-size: 1.2rem; }
+            
             .navbar { 
                 flex-direction: column; 
-                gap: 15px;
+                gap: 15px; 
                 text-align: center;
             }
             
             .logo-container img {
-                width: 220px; /* Logo más pequeño en móviles */
                 margin: 0 auto;
+                max-width: 280px;
             }
 
             .nav-links { 
                 flex-wrap: wrap; 
                 justify-content: center; 
-                font-size: 0.85rem;
             }
 
             .instructor-flex-container {
                 flex-direction: column;
                 text-align: center;
-                gap: 20px;
             }
 
             .container {
-                padding: 40px 15px;
+                padding: 40px 20px;
             }
 
-            .cta-button {
-                padding: 15px 25px;
-                font-size: 1.1rem;
+            .benefit-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .check-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -272,60 +383,145 @@
 
 <header>
     <h1>No compitas <em>contra</em> la IA,<br>compite <span class="highlight">CON</span> la IA.</h1>
-    <p class="subheadline">Desbloquea un futuro de posibilidades ilimitadas. Conviértelo en el motor productivo de tu negocio.</p>
+    <p class="subheadline">Desbloquea un futuro de posibilidades ilimitadas. Deja de usar ChatGPT como un juguete y conviértelo en el motor productivo de tu negocio.</p>
     <a href="#registro" class="cta-button">QUIERO DOMINAR CHATGPT AHORA</a>
 </header>
 
+
 <div class="pain-section">
     <div class="container">
-        <h2 style="color: var(--dark); font-size: 1.8rem;">¿Te sientes identificado?</h2>
+        <h2 style="color: var(--dark); font-size: 2rem;">¿Te sientes identificado con esto?</h2>
+        <p>La mayoría de los empresarios usan menos del 10% del poder de la IA.</p>
+        
         <div class="pain-grid">
             <div class="pain-card">
                 <span class="pain-icon">🛑</span>
                 <h3>Miedo a la Fuga de Datos</h3>
-                <p>"No subo contratos ni estados financieros por miedo."</p>
+                <p>"No subo contratos ni estados financieros porque me da miedo que se filtren."</p>
             </div>
             <div class="pain-card">
                 <span class="pain-icon">🤥</span>
-                <h3>Desconfianza</h3>
-                <p>"A veces inventa datos y no puedo confiar plenamente."</p>
+                <h3>Desconfianza en la IA</h3>
+                <p>"A veces inventa datos (alucinaciones) y no puedo confiar en ella para decisiones serias."</p>
             </div>
             <div class="pain-card">
                 <span class="pain-icon">🤯</span>
                 <h3>Caos Operativo</h3>
-                <p>"Pierdo tiempo explicando siempre lo mismo a la IA."</p>
+                <p>"Tengo un desorden de chats y pierdo tiempo explicando siempre lo mismo a la IA."</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="video-section">
-    <div class="container">
-        <h2>Shorts y videos</h2>
+    <div class="container" style="padding: 0;">
+        <div class="video-header">
+            <h2 style="color: var(--dark); font-size: 2rem; margin-bottom: 5px;">Shorts y videos</h2>
+            <a href="#" class="channel-link" target="_blank"><i class="fab fa-youtube"></i> Ver canal completo</a>
+        </div>
+        
         <div class="video-grid">
             <div class="video-thumbnail">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Video 1" style="width:100%; height:100%; object-fit:cover;">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Tecnología">
+                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
             </div>
             <div class="video-thumbnail">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Video 2" style="width:100%; height:100%; object-fit:cover;">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Código">
+                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
             </div>
             <div class="video-thumbnail">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80" alt="Video 3" style="width:100%; height:100%; object-fit:cover;">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80" alt="Robot">
+                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
             </div>
         </div>
     </div>
 </div>
 
+
+<div class="solution-section">
+    <div class="container">
+        <h2 style="color: var(--primary); font-size: 2rem; text-align: center;">Transforma Miedos en Ventajas Competitivas</h2>
+        <p style="text-align: center; margin-bottom: 40px;">En el <strong>Curso Experto en ChatGPT</strong>, aprenderás a:</p>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Blindar tu Información (Chat Temporal)</h3>
+                    <p>La confidencialidad no es opcional. Aprende a configurar sesiones privadas donde tus datos financieros y legales <strong>nunca se guardan</strong> ni entrenan al modelo.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Eliminar Errores (Modelo Thinking)</h3>
+                    <p>Activa el "Pensamiento Profundo" para obligar a la IA a razonar antes de responder, obteniendo análisis precisos y cero alucinaciones.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Organizar tu Caos (Proyectos)</h3>
+                    <p>Crea espacios de trabajo aislados. Sube tu manual de marca una sola vez y haz que la IA responda siempre como un experto en TU negocio.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Automatizar lo Aburrido (Modo Agente)</h3>
+                    <p>Configura al Agente para que tome el control de tu navegador, llene formularios y redacte correos mientras tú te enfocas en vender.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2 style="text-align: center; margin-bottom: 40px;">Tu Ruta de Aprendizaje (3 Sesiones Intensivas)</h2>
+    <div class="syllabus-grid">
+        <div class="module">
+            <h3>📅 Sesión 1: Fundamentos Profesionales</h3>
+            <ul>
+                <li>Configuración de Modelos: Auto vs. Thinking.</li>
+                <li>Privacidad Absoluta con Chat Temporal.</li>
+                <li>Organización Avanzada con Proyectos y Memoria.</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3>🚀 Sesión 2: Herramientas de Poder</h3>
+            <ul>
+                <li><strong>Investiga a Fondo:</strong> Espionaje de mercado y precios en minutos.</li>
+                <li><strong>Modo Agente:</strong> Automatización de tareas web.</li>
+                <li><strong>Canvas:</strong> Edición de documentos asistida por IA.</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3>🤖 Sesión 3: Asistentes y Prompts</h3>
+            <ul>
+                <li><strong>GPTs Personalizados:</strong> Crea empleados virtuales (RH, Ventas).</li>
+                <li><strong>Ingeniería de Prompts:</strong> Usa NotebookLM para crear instrucciones perfectas.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
 <div class="instructor-section">
     <div class="container">
         <div class="instructor-flex-container">
             <div class="qr-wrapper">
-                <img src="qr.png" alt="QR Contacto">
+                <img src="qr.png" alt="Código QR Contacto">
             </div>
+            
             <div class="instructor-info">
                 <h2>Tu Instructor: Pedro Medina</h2>
-                <p>Ingeniero en Sistemas con Maestrías en Negocios. Te enseñará a ahorrar horas de trabajo real.</p>
-                <a href="https://wa.me/message/JG7VSAITBDBVO1" style="color: #25D366; text-decoration: none; font-weight: bold;">
+                <p style="font-size: 1.2rem;">Ingeniero en Sistemas con Maestrías en Negocios y Productividad. Pedro no te enseñará teoría aburrida; te enseñará cómo él usa estas herramientas para ahorrar horas de trabajo y gestionar negocios reales.</p>
+                
+                <a href="https://wa.me/message/JG7VSAITBDBVO1" class="wa-direct-link" target="_blank">
                     <i class="fab fa-whatsapp"></i> Hablar con Pedro
                 </a>
             </div>
@@ -333,13 +529,27 @@
     </div>
 </div>
 
-<div class="final-cta" id="registro" style="text-align: center; padding: 60px 20px;">
+
+<div class="final-cta" id="registro">
     <h2>El futuro pertenece a quienes dominan la IA hoy.</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">Con la llegada de herramientas como el navegador <strong>Atlas</strong>, quien no se actualice, desaparecerá.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYuen_Rb1M5556Z8oSoSyXLbXAgB7Ohij6jSbpkmbxUJY7w/viewform" class="cta-button" style="background-color: var(--accent);">APARTAR MI LUGAR AHORA</a>
+    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">Garantía de satisfacción. Cupo limitado para atención personalizada.</p>
+</div>
+
+<div class="portfolio-section">
+    <div class="container" style="padding: 0;">
+        <h3 style="text-align: center; color: var(--text-gray);">Explora otros proyectos y herramientas</h3>
+        <div class="portfolio-grid">
+            <a href="https://claude.ai/public/artifacts/36b7abf0-70e0-47e6-a4b7-871bdfb0b8dd" class="portfolio-link">Contenido temático</a>
+            <a href="https://claude.ai/public/artifacts/594c90da-6b07-4cb5-a9a8-fc4e7efa8415" class="portfolio-link">Problema, miedos y necesidades</a>
+            <a href="#" class="portfolio-link">Proyecto HTML</a>
+        </div>
+    </div>
 </div>
 
 <footer style="background: #eee; text-align: center; padding: 20px; font-size: 0.8rem;">
-    <p>&copy; 2026 Curso Experto en ChatGPT. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Curso Experto en ChatGPT. Todos los derechos reservados.</p>
 </footer>
 
 </body>
