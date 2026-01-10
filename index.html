@@ -111,7 +111,7 @@
         }
         .pain-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
 
-        /* --- Sección de Videos (ACTUALIZADA) --- */
+        /* --- Sección de Videos --- */
         .video-section {
             background-color: #f1f5f9;
             padding: 50px 20px;
@@ -136,16 +136,29 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .video-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* --- Benefits / Solution (Ajuste de alineación) --- */
+        .solution-section { background-color: var(--light); }
+        
+        .benefit-item { 
+            display: flex; 
+            align-items: flex-start; 
+            margin-bottom: 30px; 
         }
 
-        /* Benefits / Solution */
-        .solution-section { background-color: var(--light); }
-        .benefit-item { display: flex; align-items: flex-start; margin-bottom: 30px; }
-        .check-icon { color: var(--primary); font-size: 1.5rem; margin-right: 15px; min-width: 30px; }
+        .benefit-item h3 {
+            margin-top: 0; /* Alinea el texto con la parte superior de la paloma */
+            margin-bottom: 10px;
+        }
+
+        .check-icon { 
+            color: var(--primary); 
+            font-size: 1.5rem; 
+            margin-right: 15px; 
+            min-width: 30px;
+            line-height: 1; /* Asegura que el icono no tenga espacio extra arriba */
+        }
 
         /* Syllabus */
         .syllabus-grid {
@@ -166,6 +179,7 @@
             margin: 0 auto;
         }
         .qr-wrapper img { width: 150px; height: 150px; border-radius: 10px; border: 4px solid white; background: white; }
+        
         .wa-direct-link {
             display: inline-flex;
             align-items: center;
@@ -180,7 +194,12 @@
             border-radius: 50px;
             transition: all 0.3s;
         }
-        .wa-direct-link:hover { background-color: #25D366; color: white; }
+
+        /* Final CTA (Asegurando centrado) */
+        .final-cta {
+            text-align: center;
+            padding: 80px 20px;
+        }
 
         /* Portfolio */
         .portfolio-section { background-color: #fff; padding: 50px 20px; border-top: 1px solid #e2e8f0; }
@@ -200,8 +219,7 @@
             .navbar { flex-direction: column; gap: 15px; text-align: center; }
             .logo-container img { margin: 0 auto; max-width: 280px; }
             .instructor-flex-container { flex-direction: column; text-align: center; }
-            .benefit-item { flex-direction: column; align-items: center; text-align: center; }
-            .check-icon { margin-right: 0; margin-bottom: 10px; }
+            .benefit-item { text-align: left; }
         }
     </style>
 </head>
@@ -217,17 +235,29 @@
 
 <header>
     <h1>No compitas <em>contra</em> la IA,<br>compite <span class="highlight">CON</span> la IA.</h1>
-    <p class="subheadline">Desbloquea un futuro de posibilidades ilimitadas. Conviértelo en el motor productivo de tu negocio.</p>
+    <p class="subheadline">Desbloquea un futuro de posibilidades ilimitadas. Deja de usar ChatGPT como un juguete y conviértelo en el motor productivo de tu negocio.</p>
     <a href="#registro" class="cta-button">QUIERO DOMINAR CHATGPT AHORA</a>
 </header>
 
 <div class="pain-section">
     <div class="container">
-        <h2 style="color: var(--dark); font-size: 2rem;">¿Te sientes identificado?</h2>
+        <h2 style="color: var(--dark); font-size: 2rem;">¿Te sientes identificado con esto?</h2>
         <div class="pain-grid">
-            <div class="pain-card"><h3>🛑 Miedo a Datos</h3><p>Temor a filtrar contratos o estados financieros.</p></div>
-            <div class="pain-card"><h3>🤥 Desconfianza</h3><p>Miedo a las alucinaciones de la IA.</p></div>
-            <div class="pain-card"><h3>🤯 Caos</h3><p>Desorden de chats y pérdida de tiempo repetitiva.</p></div>
+            <div class="pain-card">
+                <span class="pain-icon">🛑</span>
+                <h3>Miedo a la Fuga de Datos</h3>
+                <p>"No subo contratos ni estados financieros porque me da miedo que se filtren."</p>
+            </div>
+            <div class="pain-card">
+                <span class="pain-icon">🤥</span>
+                <h3>Desconfianza en la IA</h3>
+                <p>"A veces inventa datos (alucinaciones) y no puedo confiar en ella para decisiones serias."</p>
+            </div>
+            <div class="pain-card">
+                <span class="pain-icon">🤯</span>
+                <h3>Caos Operativo</h3>
+                <p>"Tengo un desorden de chats y pierdo tiempo explicando siempre lo mismo a la IA."</p>
+            </div>
         </div>
     </div>
 </div>
@@ -235,17 +265,16 @@
 <div class="video-section">
     <div class="container">
         <h2 style="color: var(--dark); font-size: 2rem; margin-bottom: 5px;">Clases y Demostraciones</h2>
-        <a href="https://www.youtube.com/@besmart" class="channel-link" target="_blank"><i class="fab fa-youtube"></i> Ver canal completo</a>
-        
+        <a href="#" class="channel-link" target="_blank"><i class="fab fa-youtube"></i> Ver canal completo</a>
         <div class="video-grid">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/A5w-dEgIU1M" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/gETJ19cu8-8" allowfullscreen></iframe>
             </div>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/E-yaxqDsfgY" allowfullscreen></iframe>
             </div>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/gETJ19cu8-8" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/A5w-dEgIU1M" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -255,19 +284,44 @@
     <div class="container">
         <h2 style="color: var(--primary); font-size: 2rem; text-align: center;">Transforma Miedos en Ventajas Competitivas</h2>
         <div style="max-width: 800px; margin: 40px auto 0 auto;">
-            <div class="benefit-item"><span class="check-icon">✓</span><div><h3>Blindar Información</h3><p>Sesiones privadas donde tus datos nunca se guardan.</p></div></div>
-            <div class="benefit-item"><span class="check-icon">✓</span><div><h3>Eliminar Errores</h3><p>Uso del "Modelo Thinking" para razonamiento profundo.</p></div></div>
-            <div class="benefit-item"><span class="check-icon">✓</span><div><h3>Organizar el Caos</h3><p>Espacios de trabajo aislados por proyectos.</p></div></div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Blindar tu Información (Chat Temporal)</h3>
+                    <p>La confidencialidad no es opcional. Aprende a configurar sesiones privadas donde tus datos nunca se guardan.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Eliminar Errores (Modelo Thinking)</h3>
+                    <p>Activa el "Pensamiento Profundo" para obligar a la IA a razonar antes de responder.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Organizar tu Caos (Proyectos)</h3>
+                    <p>Crea espacios de trabajo aislados para tu negocio.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <h3>Automatizar lo Aburrido (Modo Agente)</h3>
+                    <p>Configura al Agente para que tome el control de tareas repetitivas.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <h2 style="text-align: center; margin-bottom: 40px;">Tu Ruta de Aprendizaje</h2>
+    <h2 style="text-align: center; margin-bottom: 40px;">Tu Ruta de Aprendizaje (3 Sesiones Intensivas)</h2>
     <div class="syllabus-grid">
-        <div class="module"><h3>📅 Sesión 1: Fundamentos</h3><p>Privacidad, Modelos Auto vs Thinking y Memoria.</p></div>
-        <div class="module"><h3>🚀 Sesión 2: Herramientas</h3><p>Investigación de mercado, Agentes y Canvas.</p></div>
-        <div class="module"><h3>🤖 Sesión 3: Personalización</h3><p>Creación de GPTs y Prompts avanzados.</p></div>
+        <div class="module"><h3>📅 Sesión 1: Fundamentos</h3><ul><li>Privacidad Absoluta.</li><li>Modelos Auto vs. Thinking.</li></ul></div>
+        <div class="module"><h3>🚀 Sesión 2: Herramientas</h3><ul><li>Modo Agente.</li><li>Canvas y Automatización.</li></ul></div>
+        <div class="module"><h3>🤖 Sesión 3: Personalización</h3><ul><li>GPTs Propios.</li><li>Ingeniería de Prompts.</li></ul></div>
     </div>
 </div>
 
@@ -285,8 +339,10 @@
 </div>
 
 <div class="final-cta" id="registro">
-    <h2>Aparta tu lugar ahora</h2>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYuen_Rb1M5556Z8oSoSyXLbXAgB7Ohij6jSbpkmbxUJY7w/viewform" class="cta-button" style="background-color: var(--accent);">REGISTRARME AL CURSO</a>
+    <h2>El futuro pertenece a quienes dominan la IA hoy.</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">Con la llegada de herramientas como el navegador <strong>Atlas</strong>, quien no se actualice, desaparecerá.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYuen_Rb1M5556Z8oSoSyXLbXAgB7Ohij6jSbpkmbxUJY7w/viewform" class="cta-button" style="background-color: var(--accent);">APARTAR MI LUGAR AHORA</a>
+    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">Garantía de satisfacción. Cupo limitado para atención personalizada.</p>
 </div>
 
 <div class="portfolio-section">
@@ -299,7 +355,7 @@
 </div>
 
 <footer style="background: #eee; text-align: center; padding: 20px; font-size: 0.8rem;">
-    <p>&copy; 2026 Curso Experto en ChatGPT. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Curso Experto en ChatGPT. Todos los derechos reservados.</p>
 </footer>
 
 </body>
